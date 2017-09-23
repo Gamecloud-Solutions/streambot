@@ -1,5 +1,8 @@
 exports.run = (client, message, args) => {
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const config = require("../config.json");
+    let prefix = config.prefix; //"!";
+    args = message.content.slice(prefix.length).trim().split(/ +/g);
+    
     const command = args.shift().toLowerCase();
     const Discord = require("discord.js");
     const embed = new Discord.RichEmbed()
