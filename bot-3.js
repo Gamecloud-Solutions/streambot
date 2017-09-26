@@ -13,10 +13,10 @@ bot.on('ready', function() {
 });
 
 bot.on('message', function(user, userID, channelID, message, event) {
-    if (message === prefix + "ping") {
+    if (message === prefix + "pong") {
         bot.sendMessage({
             to: channelID,
-            message: "pong"
+            message: "ping"
         });
     }
 });
