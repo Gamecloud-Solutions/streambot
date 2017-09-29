@@ -21,10 +21,10 @@ fs.readdir("./events/", (err, files) => {
     });
 });
 
-client.on("message",newFunction());
+client.on("message",ResponseMessage());
 
 client.login(config.token);
-function newFunction() {
+function ResponseMessage() {
     return message => {
         if (message.author.bot)
             return;
