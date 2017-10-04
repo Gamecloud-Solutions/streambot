@@ -7,8 +7,12 @@ exports.run = (client, message, args) => {
     const command = args.shift().toLowerCase();
    
     const embed = new Discord.RichEmbed()
+        // Set the Title, takes one argument
         .setTitle(args[0])
-        .setAuthor(args[1], "https://i.imgur.com/lm8s41J.png")
+        // Link for Author 
+        .setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
+        // Set the Author
+        .setAuthor(args[1], message.author.avatarURL)//"https://i.imgur.com/lm8s41J.png")
         /*
          * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
          */
@@ -38,7 +42,7 @@ exports.run = (client, message, args) => {
 
         .setFooter("This is the footer text, it can hold 2048 characters", "http://i.imgur.com/w1vhFSR.png")
         .setTimestamp()
-        .setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
+        
 
     message.channel.send({ embed }).catch(console.error);
 }
