@@ -5,14 +5,24 @@ function Trade(){
 
         const fs = require("fs");
         let trades = JSON.parse(fs.readFileSync("./trades.json", "utf8"));
+        // Counters
+        var level = trades[message.author.id].trades.level;
+        if(trades[message.author.id].trades.timesTraded > 10){
+
+        }
+        var userTrades = trades[message.author.id].trades.tradedWith.timesTraded + 1;
+        var timesTraded = trades[message.author.id].trades.timesTraded + 1;
 
         // build the trades object
         trades[message.author.id].trades = {
-            "id": 1, 
+            "id": 357300870515261440, 
             "tradedWith":{
-                "id":0
+                "id":args[0],
+                "timesTraded": userTrades
             },
-            "timesTraded":0
+            "level": level,
+            "timesTraded":timesTraded,
+            "timestamp": new Date().toString()
         };
         //trades[message.author.id].trades.id = trades[message.author.id].trades.id + 1;
 
@@ -24,8 +34,8 @@ function Trade(){
         });
 
 
-        message.reply('Trade Completed Successfuly!')
-        .then(msg => console.log('Trade completed ${msg.author}'))
+        message.reply(args[1] + ' traded successfuly!')
+        .then(msg => console.log('Trade completed with ' + msg.author + ' for ' + args[1]))
         .catch(console.error);
-    }
+    };
 }
