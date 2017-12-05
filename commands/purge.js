@@ -1,9 +1,12 @@
 exports.run = Purge();
 
 function Purge(){
-    args = message.content.slice(config.prefix.length).trim().split(/ +/g);    
-    const command = args.shift().toLowerCase();   
+      
     return (client, message, args) => {
+        const config = require("../config.json");
+        args = message.content.slice(config.prefix.length).trim().split(/ +/g);    
+        const command = args.shift().toLowerCase(); 
+        const prefix = '!';
         if(command === `${prefix}purge`) {
             const args = message.content.slice(prefix.length).trim().split(/ +/g);
             message.delete();

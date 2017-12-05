@@ -11,7 +11,10 @@ let prefix = config.prefix; //"!";
 let points = JSON.parse(fs.readFileSync("./points.json", "utf8"));
 
 client.on("ready", () => {
-    console.log("Streambot Ready!");
+
+
+    
+    console.log("Streambot running!");
 });
 
 // This loop reads the /events/ folder and attaches each event file to the appropriate event.
@@ -25,9 +28,10 @@ fs.readdir("./events/", (err, files) => {
     });
 });
 
-client.on("message",ResponseMessage());
+client.on("message", ResponseMessage());
 
 client.login(config.token);
+
 function ResponseMessage() {
     return message => {
         if (message.author.bot)
