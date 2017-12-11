@@ -11,9 +11,6 @@ let prefix = config.prefix; //"!";
 let points = JSON.parse(fs.readFileSync("./points.json", "utf8"));
 
 client.on("ready", () => {
-
-
-    
     console.log("Streambot running!");
 });
 
@@ -44,10 +41,13 @@ function ResponseMessage() {
         // The list of if/else is replaced with those simple 2 lines:
         try {
             let commandFile = require(`./commands/${command}.js`);
+            
             commandFile.run(client, message, args);
         }
         catch (err) {
-            console.error(err);
+            // Removed console.err so the bot would keep running and notify user and log
+            console.log('The user entered ' + command + ', this command does not exist.');
+            message.reply('command does not exist!');
         }
     };
 }

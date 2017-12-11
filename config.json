@@ -1,7 +1,10 @@
-{ "token": "", "prefix": "!", "ownerID": "JaxCoder",
-"settings": {
-    "permissions":{
-        "admin": true
-    }    
-}
+{ 
+    "token": "MzU3MzAwODcwNTE1MjYxNDQw.DJ7EEg.dmeE_ZVv5qmfglPe-_j-EStN0Lw", 
+    "prefix": "sb!",  
+    "ownerID": "JaxCoder",
+    "settings": {
+        "permissions":{
+            "admin": true
+        }    
+    }
 }

@@ -41,6 +41,6 @@ function Stream(){
         message.reply('Now streaming at ' + args[0])
             .then(msg => console.log(msg.author + ' started streaming at ' + args[0]))
             .catch(console.err);
-    };
-};
-
+    }
+    }
+}
