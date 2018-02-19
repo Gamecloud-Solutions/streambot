@@ -14,25 +14,31 @@ function Points() {
                 points[message.author.id].level++;
                 
             }
-            else if (points[message.author.id].points > 24) {
+            else if (points[message.author.id].points >= 24) {
                 if (points[message.author.id].level == 1) {
                     points[message.author.id].level++;
-                    
+                    points[message.author.id].timestamp = Timestamp();
                 }
-                else if (points[message.author.id].points > 49) {
+                else if (points[message.author.id].points >= 49) {
                     if (points[message.author.id].level == 2) {
                         points[message.author.id].level++;
-                        
+                        points[message.author.id].timestamp = Timestamp();
                     }
-                    else if (points[message.author.id].points > 149) {
+                    else if (points[message.author.id].points >= 149) {
                         if (points[message.author.id].level == 3) {
                             points[message.author.id].level++;
                             points[message.author.id].timestamp = Timestamp();
                         }
-                        else if (points[message.author.id].points > 299) {
+                        else if (points[message.author.id].points >= 299) {
                             if (points[message.author.id].level == 4) {
                                 points[message.author.id].level++;
-                                
+                                points[message.author.id].timestamp = Timestamp();
+                            }
+                            else if (points[message.author.id].points >= 500) {
+                                if (points[message.author.id].level == 5) {
+                                    points[message.author.id].level++;
+                                    points[message.author.id].timestamp = Timestamp();
+                                }
                             }
                         }
                     }
@@ -41,7 +47,7 @@ function Points() {
         }
 
         function Timestamp(){
-            points[message.author.id].timestamp = new Date().toString();
+            return new Date().toString();
         };
 
         // And then, we save the edited file.

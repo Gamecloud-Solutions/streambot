@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+var Logger = require("./Logger.js");
 const client = new Discord.Client({ 
     diasbleEveryone: true,
     messageCacheMaxSize: 500,
@@ -46,8 +47,9 @@ function ResponseMessage() {
         }
         catch (err) {
             // Removed console.err so the bot would keep running and notify user and log
+            //Logger.LogCommandError(command, message.author);
             console.log('The user entered ' + command + ', this command does not exist.');
-            message.reply('command does not exist!');
+            message.reply('command does not exist: ' + command);
         }
     };
 }
